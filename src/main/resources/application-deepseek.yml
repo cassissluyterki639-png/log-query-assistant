@@ -1,0 +1,14 @@
+spring:
+  ai:
+    openai:
+      api-key: sk-0xxx
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    com.logassistant.service: DEBUG
+

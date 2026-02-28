@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+# ===== LLM 提供商配置 =====
+# 默认使用 OpenAI，切换到 DeepSeek 只需启动时加参数:
+#   ./mvnw spring-boot:run -Dspring-boot.run.profiles=deepseek
+# 或设置环境变量:
+#   SPRING_PROFILES_ACTIVE=deepseek
+spring:
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:sk-proj-dxxx}
+      base-url: ${OPENAI_BASE_URL:https://api.openai.com}
+      chat:
+        options:
+          model: ${OPENAI_MODEL:gpt-4o}
+          temperature: 0.3
+
+kibana:
+  base-url: ${KIBANA_BASE_URL:http://localhost:5601}
+  default-index: ${KIBANA_DEFAULT_INDEX:app_logs_index}
+  default-cookie: ${KIBANA_DEFAULT_COOKIE:}
+  kbn-version: "7.12.1"
